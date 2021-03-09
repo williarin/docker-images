@@ -1,0 +1,29 @@
+name: Build and deploy
+
+on:
+    push:
+        branches:
+            - master
+    schedule:
+        - cron:  '0 0 * * 1' # Once a week at 00:00 on Monday
+
+jobs:
+    build_and_deploy:
+        name: Build and deploy
+
+        runs-on: ubuntu-20.04
+
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v2
+
+            -   name: Build
+                run: make php
+
+            -   name: Test
+                run: make test-php
+
+            -   name: Deploy
+                run: |
+                    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+                    make deploy
