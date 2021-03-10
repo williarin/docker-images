@@ -52,3 +52,16 @@ docker run --user www-data -w /home/www-data --rm williarin/php:8.0-dev bash -c 
 
 ### Extend the images to your needs
 
+You can easily add PHP extensions using Alpine package manager.
+
+As an example, create a new image with this Dockerfile to add exif extension to PHP:
+
+```dockerfile
+ARG PHP_VERSION=8.0
+
+FROM williarin/php:${PHP_VERSION}-fpm
+
+RUN apk add --no-cache \
+    php8-exif \
+    ;
+```
