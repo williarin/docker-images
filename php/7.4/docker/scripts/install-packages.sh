@@ -31,4 +31,5 @@ apk --no-cache add \
     php7-tokenizer \
     php7-simplexml \
     php7-xmlwriter \
+    php7-fileinfo \
     php7-opcache
