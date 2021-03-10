@@ -30,6 +30,7 @@ apk --no-cache add \
     php8-zlib \
     php8-tokenizer \
     php8-simplexml \
+    php7-xmlwriter \
     php8-opcache
 
 ln -s /usr/bin/php8 /usr/bin/php
