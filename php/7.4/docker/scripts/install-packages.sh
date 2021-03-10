@@ -29,4 +29,5 @@ apk --no-cache add \
     php7-zip \
     php7-zlib \
     php7-tokenizer \
+    php7-simplexml \
     php7-opcache

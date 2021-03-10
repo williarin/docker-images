@@ -17,7 +17,7 @@ Installed PHP extensions:
 
 `ctype`, `curl`, `dom`, `ftp`, `gd`, `iconv`, `intl`, `mbstring`, `mysqlnd`, `openssl`, `pdo`,
 `pdo_sqlite`, `pdo_mysql`, `pdo_pgsql`, `pear`, `phar`, `posix`, `session`, `sqlite3`, `xml`,
-`xmlreader`, `zip`, `zlib`, `opcache`, `tokenizer`
+`xmlreader`, `zip`, `zlib`, `opcache`, `tokenizer`, `simplexml`
 
 Additionally, `-dev` versions come with Xdebug 3.
 
