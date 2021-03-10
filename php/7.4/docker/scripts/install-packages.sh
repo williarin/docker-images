@@ -28,4 +28,5 @@ apk --no-cache add \
     php7-xmlreader \
     php7-zip \
     php7-zlib \
+    php7-tokenizer \
     php7-opcache
