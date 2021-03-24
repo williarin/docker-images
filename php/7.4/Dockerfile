@@ -4,7 +4,7 @@ ARG ALPINE_VERSION
 
 ###########################################################
 
-FROM alpine:${ALPINE_VERSION} as base
+FROM williarin/alpine:${ALPINE_VERSION} as base
 
 ARG ALPINE_VERSION
 ARG PHP_VERSION
@@ -13,6 +13,7 @@ COPY docker /docker/
 
 RUN apk --update-cache add ca-certificates \
     && apk update && apk upgrade \
+    && rm -rf /var/cache/apk/* \
     && /docker/scripts/install-packages.sh \
     && /docker/scripts/ensure-www-data.sh \
     && mv /docker/php-entrypoint /usr/local/bin/

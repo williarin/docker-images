@@ -4,7 +4,7 @@ ARG ALPINE_VERSION
 
 ###########################################################
 
-FROM alpine:${ALPINE_VERSION} as base
+FROM williarin/alpine:${ALPINE_VERSION} as base
 
 ARG ALPINE_VERSION
 ARG PHP_VERSION

@@ -2,6 +2,53 @@
 
 This repository contains various Docker images to be used in web softwares.
 
+## Alpine 3.13 with zsh
+
+Beautiful terminal for your Docker containers.
+
+![GitHub Logo](/assets/images/exa_demo.jpg)
+
+### Details
+
+Although slightly bigger than the base Alpine image,
+it will be a joy to connect to your containers as it includes:
+
+* [zsh](https://www.zsh.org/) with `zsh-autosuggestions` and `zsh-syntax-highlighting` plugins
+* [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) with a beautiful prompt
+* [exa](https://the.exa.website/) modern replacement for `ls`
+
+Aliases are already defined to replace `ls` with `exa`:
+
+```zsh
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias ls="exa --icons"
+alias l="exa -aghl --git --icons"
+alias ll="exa -ghl --git --icons"
+alias lt="exa --tree --level=2 --icons"
+```
+
+Try it:
+
+```bash
+# Connect as root
+docker run --rm -it williarin/alpine
+
+# Connect as current user
+docker run --rm -it -u '1000:1000' williarin/alpine
+```
+
+### Available tags
+
+| Image  | Size |
+| --- | --- |
+| williarin/alpine:latest | [![](https://img.shields.io/docker/image-size/williarin/alpine/latest)](https://hub.docker.com/r/williarin/alpine) |
+| williarin/alpine:3.13   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.13)](https://hub.docker.com/r/williarin/alpine) |
+
+
 ## PHP 7.4 and 8.0 images
 
 This is an adaptation of [kreait/php](https://github.com/kreait/docker-images) repository.
@@ -10,8 +57,8 @@ Images are built once a week at 00:00 on Monday.
 
 ### Details
 
-All images are based on Alpine Linux 3.13 and come with `bash`, `zip`, `unzip` and widely
-used PHP extensions.  
+All images are based on Alpine Linux 3.13 ([williarin/alpine](#alpine-313-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely
+used PHP extensions.
 
 Installed PHP extensions:
 
