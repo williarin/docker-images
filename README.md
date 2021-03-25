@@ -20,11 +20,6 @@ it will be a joy to connect to your containers as it includes:
 Aliases are already defined to replace `ls` with `exa`:
 
 ```zsh
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
 alias ls="exa --icons"
 alias l="exa -aghl --git --icons"
 alias ll="exa -ghl --git --icons"
