@@ -2,7 +2,7 @@
 
 This repository contains various Docker images to be used in web softwares.
 
-## Alpine 3.13 with zsh
+## Alpine 3.14 with zsh
 
 Beautiful terminal for your Docker containers.
 
@@ -41,6 +41,7 @@ docker run --rm -it -u '1000:1000' williarin/alpine
 | Image  | Size |
 | --- | --- |
 | williarin/alpine:latest | [![](https://img.shields.io/docker/image-size/williarin/alpine/latest)](https://hub.docker.com/r/williarin/alpine) |
+| williarin/alpine:3.14   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.14)](https://hub.docker.com/r/williarin/alpine) |
 | williarin/alpine:3.13   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.13)](https://hub.docker.com/r/williarin/alpine) |
 
 
@@ -52,7 +53,7 @@ Images are built once a week at 00:00 on Monday.
 
 ### Details
 
-All images are based on Alpine Linux 3.13 ([williarin/alpine](#alpine-313-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely
+All images are based on Alpine Linux 3.14 ([williarin/alpine](#alpine-314-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely
 used PHP extensions.
 
 Installed PHP extensions:
@@ -104,6 +105,6 @@ ARG PHP_VERSION=8.0
 FROM williarin/php:${PHP_VERSION}-fpm
 
 RUN apk add --no-cache \
-    php8-exif \
+        php8-exif \
     ;
 ```
