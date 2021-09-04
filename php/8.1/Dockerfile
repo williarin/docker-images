@@ -43,7 +43,7 @@ RUN apk --no-cache add php81-fpm \
 
 EXPOSE 9000
 
-CMD ["php-fpm8"]
+CMD ["php-fpm81"]
 
 ###########################################################
 
