@@ -21,11 +21,11 @@ test-alpine: test-alpine313 test-alpine314 test-alpineedge
 
 test-alpine313:
 	docker run --rm williarin/alpine:3.13 /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
-	docker run --rm williarin/alpine:3.13 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux 3.13'"
+	docker run --rm williarin/alpine:3.13 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux v3.13'"
 
 test-alpine314:
 	docker run --rm williarin/alpine:3.14 /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
-	docker run --rm williarin/alpine:3.14 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux 3.14'"
+	docker run --rm williarin/alpine:3.14 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux v3.14'"
 
 test-alpineedge:
 	docker run --rm williarin/alpine:edge /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
