@@ -2,7 +2,7 @@
 
 This repository contains various Docker images to be used in web softwares.
 
-## Alpine 3.14 with zsh
+## Alpine 3.13, 3.14 and edge with zsh
 
 Beautiful terminal for your Docker containers.
 
@@ -39,13 +39,15 @@ docker run --rm -it -u '1000:1000' williarin/alpine
 ### Available tags
 
 | Image  | Size |
-| --- | --- |
+| ------ | ---- |
+| williarin/alpine:edge   | [![](https://img.shields.io/docker/image-size/williarin/alpine/edge)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:latest | [![](https://img.shields.io/docker/image-size/williarin/alpine/latest)](https://hub.docker.com/r/williarin/alpine) |
-| williarin/alpine:3.14   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.14)](https://hub.docker.com/r/williarin/alpine) |
-| williarin/alpine:3.13   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.13)](https://hub.docker.com/r/williarin/alpine) |
+| williarin/alpine:3.14   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.14)](https://hub.docker.com/r/williarin/alpine)   |
+| williarin/alpine:3.13   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.13)](https://hub.docker.com/r/williarin/alpine)   |
 
+_**Note:** `latest` is equivalent to `3.14`_
 
-## PHP 7.4 and 8.0 images
+## PHP 7.4, 8.0 and 8.1 images
 
 This is an adaptation of [kreait/php](https://github.com/kreait/docker-images) repository.
 
@@ -53,8 +55,9 @@ Images are built once a week at 00:00 on Monday.
 
 ### Details
 
-All images are based on Alpine Linux 3.14 ([williarin/alpine](#alpine-314-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely
-used PHP extensions.
+All PHP 7.4 and 8.0 images are based on Alpine Linux 3.14 ([williarin/alpine](#alpine-313-314-and-edge-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
+
+PHP 8.1 images are based on Alpine Linux edge.
 
 Installed PHP extensions:
 
@@ -76,6 +79,10 @@ Additionally, `-dev` versions come with Xdebug 3.
 | williarin/php:8.0-dev      | [![](https://img.shields.io/docker/image-size/williarin/php/8.0-dev)](https://hub.docker.com/r/williarin/php)     |
 | williarin/php:8.0-fpm      | [![](https://img.shields.io/docker/image-size/williarin/php/8.0-fpm)](https://hub.docker.com/r/williarin/php)     |
 | williarin/php:8.0-fpm-dev  | [![](https://img.shields.io/docker/image-size/williarin/php/8.0-fpm-dev)](https://hub.docker.com/r/williarin/php) |
+| williarin/php:8.1          | [![](https://img.shields.io/docker/image-size/williarin/php/8.1)](https://hub.docker.com/r/williarin/php)         |
+| williarin/php:8.1-dev      | [![](https://img.shields.io/docker/image-size/williarin/php/8.1-dev)](https://hub.docker.com/r/williarin/php)     |
+| williarin/php:8.1-fpm      | [![](https://img.shields.io/docker/image-size/williarin/php/8.1-fpm)](https://hub.docker.com/r/williarin/php)     |
+| williarin/php:8.1-fpm-dev  | [![](https://img.shields.io/docker/image-size/williarin/php/8.1-fpm-dev)](https://hub.docker.com/r/williarin/php) |
 
 ### Docker Security
 
