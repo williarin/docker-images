@@ -5,6 +5,7 @@ apk --no-cache add \
     bash \
     zip unzip \
     php7 \
+    php7-json \
     php7-ctype \
     php7-curl \
     php7-dom \

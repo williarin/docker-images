@@ -61,7 +61,7 @@ PHP 8.1 images are based on Alpine Linux edge.
 
 Installed PHP extensions:
 
-`ctype`, `curl`, `dom`, `ftp`, `gd`, `iconv`, `intl`, `mbstring`, `mysqlnd`, `openssl`, `pdo`,
+`json`, `ctype`, `curl`, `dom`, `ftp`, `gd`, `iconv`, `intl`, `mbstring`, `mysqlnd`, `openssl`, `pdo`,
 `pdo_sqlite`, `pdo_mysql`, `pdo_pgsql`, `pear`, `phar`, `posix`, `session`, `sqlite3`, `xml`,
 `xmlreader`, `zip`, `zlib`, `opcache`, `tokenizer`, `simplexml`, `xmlwriter`, `fileinfo`
 
