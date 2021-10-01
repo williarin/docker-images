@@ -32,6 +32,7 @@ apk --no-cache add \
     php8-simplexml \
     php8-xmlwriter \
     php8-fileinfo \
+    php8-sodium \
     php8-opcache
 
 ln -s /usr/bin/php8 /usr/bin/php

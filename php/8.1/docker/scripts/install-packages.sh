@@ -32,6 +32,7 @@ apk --no-cache add \
     php81-simplexml \
     php81-xmlwriter \
     php81-fileinfo \
+    php81-sodium \
     php81-opcache
 
 ln -s /usr/bin/php81 /usr/bin/php
