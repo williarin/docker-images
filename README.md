@@ -2,7 +2,7 @@
 
 This repository contains various Docker images to be used in web softwares.
 
-## Alpine 3.13, 3.14 and edge with zsh
+## Alpine 3.13, 3.14, 3.15 and edge with zsh
 
 Beautiful terminal for your Docker containers.
 
@@ -42,10 +42,11 @@ docker run --rm -it -u '1000:1000' williarin/alpine
 | ------ | ---- |
 | williarin/alpine:edge   | [![](https://img.shields.io/docker/image-size/williarin/alpine/edge)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:latest | [![](https://img.shields.io/docker/image-size/williarin/alpine/latest)](https://hub.docker.com/r/williarin/alpine) |
+| williarin/alpine:3.15   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.15)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.14   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.14)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.13   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.13)](https://hub.docker.com/r/williarin/alpine)   |
 
-_**Note:** `latest` is equivalent to `3.14`_
+_**Note:** `latest` is equivalent to `3.15`_
 
 ## PHP 7.4, 8.0 and 8.1 images
 
@@ -55,7 +56,7 @@ Images are built once a week at 00:00 on Monday.
 
 ### Details
 
-All PHP 7.4 and 8.0 images are based on Alpine Linux 3.14 ([williarin/alpine](#alpine-313-314-and-edge-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
+All PHP 7.4 and 8.0 images are based on Alpine Linux 3.15 ([williarin/alpine](#alpine-313-314-315-and-edge-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
 
 PHP 8.1 images are based on Alpine Linux edge.
 
@@ -107,9 +108,7 @@ You can easily add PHP extensions using Alpine package manager.
 As an example, create a new image with this Dockerfile to add exif extension to PHP:
 
 ```dockerfile
-ARG PHP_VERSION=8.0
-
-FROM williarin/php:${PHP_VERSION}-fpm
+FROM williarin/php:8.0-fpm
 
 RUN apk add --no-cache \
         php8-exif \
