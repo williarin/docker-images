@@ -3,7 +3,9 @@ set -ex
 
 apk --no-cache add \
     bash \
-    zip unzip \
+    zip unzip;
+
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
     php81 \
     php81-ctype \
     php81-curl \

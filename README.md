@@ -21,7 +21,7 @@ Aliases are already defined to replace `ls` with `exa`:
 
 ```zsh
 alias ls="exa --icons"
-alias l="exa -aghl --git --icons"
+alias l="exa -aaghl --git --icons"
 alias ll="exa -ghl --git --icons"
 alias lt="exa --tree --level=2 --icons"
 ```
@@ -56,9 +56,7 @@ Images are built once a week at 00:00 on Monday.
 
 ### Details
 
-All PHP 7.4 and 8.0 images are based on Alpine Linux 3.15 ([williarin/alpine](#alpine-313-314-315-and-edge-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
-
-PHP 8.1 images are based on Alpine Linux edge.
+All PHP 7.4, 8.0 and 8.1 images are based on Alpine Linux 3.15 ([williarin/alpine](#alpine-313-314-315-and-edge-with-zsh)) and come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
 
 Installed PHP extensions:
 

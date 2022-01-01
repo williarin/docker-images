@@ -54,10 +54,10 @@ php8:
 	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php-fpm-dev -t williarin/php:8.0-fpm-dev php/8.0
 
 php81:
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.1 --target php -t williarin/php:8.1 php/8.1
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.1 --target php-dev -t williarin/php:8.1-dev php/8.1
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.1 --target php-fpm -t williarin/php:8.1-fpm php/8.1
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.1 --target php-fpm-dev -t williarin/php:8.1-fpm-dev php/8.1
+	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.1 --target php -t williarin/php:8.1 php/8.1
+	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.1 --target php-dev -t williarin/php:8.1-dev php/8.1
+	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.1 --target php-fpm -t williarin/php:8.1-fpm php/8.1
+	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.1 --target php-fpm-dev -t williarin/php:8.1-fpm-dev php/8.1
 
 .PHONY: test-php test-php7 test-php8 test-php81
 test-php: test-php7 test-php8 test-php81
