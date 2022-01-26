@@ -64,7 +64,7 @@ Installed PHP extensions:
 `pdo_sqlite`, `pdo_mysql`, `pdo_pgsql`, `pear`, `phar`, `posix`, `session`, `sqlite3`, `xml`,
 `xmlreader`, `zip`, `zlib`, `opcache`, `tokenizer`, `simplexml`, `xmlwriter`, `fileinfo`, `sodium`
 
-Additionally, `-dev` versions come with Xdebug 3.
+Additionally, `-dev` versions come with Xdebug 3 and `GNU Make`.
 
 ### Available tags
 
@@ -96,7 +96,7 @@ docker run --user www-data -w /home/www-data --rm williarin/php:8.0-dev bash -c 
 Confirm it by running:
 
 ```bash
-docker run --user www-data -w /home/www-data --rm williarin/php:8.0-dev bash -c "id ; env" 
+docker run --user www-data -w /home/www-data --rm williarin/php:8.0-dev bash -c "id ; env"
 ```
 
 ### Extend the images to your needs
