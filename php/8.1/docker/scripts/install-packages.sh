@@ -3,7 +3,10 @@ set -ex
 
 apk --no-cache add \
     bash \
-    zip unzip;
+    zip unzip
+
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
+    libavif
 
 apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
     php81 \
