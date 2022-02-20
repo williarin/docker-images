@@ -5,6 +5,9 @@ apk --no-cache add \
     bash \
     zip unzip
 
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ add \
+    icu-libs
+
 apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
     libavif
 
