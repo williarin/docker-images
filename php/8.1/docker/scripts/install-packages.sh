@@ -9,9 +9,7 @@ apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ add 
     icu-libs
 
 apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
-    libavif
-
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
+    libavif \
     php81 \
     php81-ctype \
     php81-curl \

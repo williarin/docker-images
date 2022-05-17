@@ -3,7 +3,7 @@ set -ex
 
 # ensure www-data user exists
 # note: Alpine 3.14 base image already includes www-data group
-if [[ "$ALPINE_VERSION" = "3.13" ]] ; then 
+if [ "$ALPINE_VERSION" = "3.13" ] ; then
     addgroup -g 82 -S www-data
 fi
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ex
 
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add make php81-pecl-xdebug
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add make php81-pecl-xdebug
 
 sed -i 's/;zend_extension/zend_extension/' /etc/php81/conf.d/50_xdebug.ini
