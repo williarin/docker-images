@@ -38,12 +38,12 @@ RUN /docker/scripts/install-dev-packages.sh \
 
 FROM base AS base-fpm
 
-RUN apk --no-cache add php81-fpm \
-    && mv /docker/www.conf /etc/php81/php-fpm.d/www.conf
+RUN apk --no-cache add php82-fpm \
+    && mv /docker/www.conf /etc/php82/php-fpm.d/www.conf
 
 EXPOSE 9000
 
-CMD ["php-fpm81"]
+CMD ["php-fpm82"]
 
 ###########################################################
 

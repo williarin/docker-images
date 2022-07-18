@@ -3,12 +3,8 @@ set -ex
 
 apk --no-cache add \
     bash \
-    zip unzip
-
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ add \
-    icu-libs
-
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
+    zip unzip \
+    icu-libs \
     libavif \
     php81 \
     php81-ctype \
