@@ -49,7 +49,7 @@ docker run --rm -it -u '1000:1000' williarin/alpine
 
 _**Note:** `latest` is equivalent to `3.16`_
 
-## PHP 7.4, 8.0, 8.2, 8.2 images
+## PHP 7.4, 8.0, 8.1, 8.2 images
 
 This is an adaptation of [kreait/php](https://github.com/kreait/docker-images) repository.
 
