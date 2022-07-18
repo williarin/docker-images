@@ -6,6 +6,11 @@ on:
             - master
         paths-ignore:
             - 'README.md'
+    pull_request:
+        branches:
+            - master
+        paths-ignore:
+            - 'README.md'
     workflow_dispatch:
     schedule:
         - cron:  '0 0 * * 1' # Once a week at 00:00 on Monday
@@ -24,6 +29,7 @@ jobs:
                 run: make
 
             -   name: Deploy
+                if: github.ref == 'refs/heads/master'
                 run: |
                     echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
                     make deploy
