@@ -65,7 +65,7 @@ Installed PHP extensions:
 `pdo_sqlite`, `pdo_mysql`, `pdo_pgsql`, `pear`, `phar`, `posix`, `session`, `sqlite3`, `xml`,
 `xmlreader`, `zip`, `zlib`, `opcache`, `tokenizer`, `simplexml`, `xmlwriter`, `fileinfo`, `sodium`
 
-Additionally, `-dev` versions come with Xdebug 3 and `GNU Make`.
+Additionally, `-dev` versions come with Xdebug 3, Git and Make.
 
 ### Available tags
 
