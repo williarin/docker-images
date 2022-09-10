@@ -8,19 +8,19 @@ all: alpine test-alpine php test-php
 alpine: alpine313 alpine314 alpine315 alpine316 alpineedge
 
 alpine313:
-	docker build --no-cache -t williarin/alpine:3.13 alpine/3.13
+	docker buildx build --no-cache --platform=linux/amd64,linux/arm64,linux/arm/v7 -t williarin/alpine:3.13 alpine/3.13
 
 alpine314:
-	docker build --no-cache -t williarin/alpine:3.14 alpine/3.14
+	docker buildx build --no-cache --platform=linux/amd64,linux/arm64,linux/arm/v7 -t williarin/alpine:3.14 alpine/3.14
 
 alpine315:
-	docker build --no-cache -t williarin/alpine:3.15 alpine/3.15
+	docker buildx build --no-cache --platform=linux/amd64,linux/arm64,linux/arm/v7 -t williarin/alpine:3.15 alpine/3.15
 
 alpine316:
-	docker build -t williarin/alpine:3.16 -t williarin/alpine:latest alpine/3.16
+	docker buildx build --no-cache --platform=linux/amd64,linux/arm64,linux/arm/v7 -t williarin/alpine:3.16 -t williarin/alpine:latest alpine/3.16
 
 alpineedge:
-	docker build --no-cache -t williarin/alpine:edge alpine/edge
+	docker buildx build --no-cache --platform=linux/amd64,linux/arm64,linux/arm/v7 -t williarin/alpine:edge alpine/edge
 
 .PHONY: test-alpine test-alpine313 test-alpine314 test-alpine315 test-alpine316 test-alpineedge
 test-alpine: test-alpine313 test-alpine314 test-alpine315 test-alpine316 test-alpineedge
@@ -49,28 +49,28 @@ test-alpineedge:
 php: php7 php8 php81 php82
 
 php7:
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php -t williarin/php:7.4 php/7.4
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php-dev -t williarin/php:7.4-dev php/7.4
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php-fpm -t williarin/php:7.4-fpm php/7.4
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php-fpm-dev -t williarin/php:7.4-fpm-dev php/7.4
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php -t williarin/php:7.4 php/7.4
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php-dev -t williarin/php:7.4-dev php/7.4
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php-fpm -t williarin/php:7.4-fpm php/7.4
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=7.4 --target php-fpm-dev -t williarin/php:7.4-fpm-dev php/7.4
 
 php8:
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php -t williarin/php:8.0 php/8.0
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php-dev -t williarin/php:8.0-dev php/8.0
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php-fpm -t williarin/php:8.0-fpm php/8.0
-	docker build --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php-fpm-dev -t williarin/php:8.0-fpm-dev php/8.0
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php -t williarin/php:8.0 php/8.0
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php-dev -t williarin/php:8.0-dev php/8.0
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php-fpm -t williarin/php:8.0-fpm php/8.0
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.15 --build-arg PHP_VERSION=8.0 --target php-fpm-dev -t williarin/php:8.0-fpm-dev php/8.0
 
 php81:
-	docker build --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php -t williarin/php:8.1 php/8.1
-	docker build --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php-dev -t williarin/php:8.1-dev php/8.1
-	docker build --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php-fpm -t williarin/php:8.1-fpm php/8.1
-	docker build --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php-fpm-dev -t williarin/php:8.1-fpm-dev php/8.1
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php -t williarin/php:8.1 php/8.1
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php-dev -t williarin/php:8.1-dev php/8.1
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php-fpm -t williarin/php:8.1-fpm php/8.1
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=3.16 --build-arg PHP_VERSION=8.1 --target php-fpm-dev -t williarin/php:8.1-fpm-dev php/8.1
 
 php82:
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php -t williarin/php:8.2 php/8.2
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php-dev -t williarin/php:8.2-dev php/8.2
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php-fpm -t williarin/php:8.2-fpm php/8.2
-	docker build --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php-fpm-dev -t williarin/php:8.2-fpm-dev php/8.2
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php -t williarin/php:8.2 php/8.2
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php-dev -t williarin/php:8.2-dev php/8.2
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php-fpm -t williarin/php:8.2-fpm php/8.2
+	docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --build-arg ALPINE_VERSION=edge --build-arg PHP_VERSION=8.2 --target php-fpm-dev -t williarin/php:8.2-fpm-dev php/8.2
 
 .PHONY: test-php test-php7 test-php8 test-php81 test-php82
 test-php: test-php7 test-php8 test-php81 test-php82
