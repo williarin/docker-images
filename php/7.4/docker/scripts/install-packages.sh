@@ -3,7 +3,11 @@ set -ex
 
 apk --no-cache add \
     bash \
-    zip unzip \
+    zip unzip;
+
+apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.15/main add 'icu-libs==69.1-r1';
+
+apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.15/community add \
     php7 \
     php7-json \
     php7-ctype \

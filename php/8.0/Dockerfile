@@ -1,10 +1,11 @@
 # Credits to https://github.com/kreait/docker-images
 
 ARG ALPINE_VERSION
+ARG REGISTRY
 
 ###########################################################
 
-FROM williarin/alpine:${ALPINE_VERSION} as base
+FROM ${REGISTRY}williarin/alpine:${ALPINE_VERSION} as base
 
 ARG ALPINE_VERSION
 ARG PHP_VERSION
@@ -38,7 +39,7 @@ RUN /docker/scripts/install-dev-packages.sh \
 
 FROM base AS base-fpm
 
-RUN apk --no-cache add php8-fpm \
+RUN apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/community add php8-fpm \
     && mv /docker/www.conf /etc/php8/php-fpm.d/www.conf
 
 EXPOSE 9000

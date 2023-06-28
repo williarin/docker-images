@@ -15,11 +15,47 @@ on:
     schedule:
         - cron:  '0 0 * * 1' # Once a week at 00:00 on Monday
 
+concurrency:
+    group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+    cancel-in-progress: true
+
 jobs:
+    build_multiplatform:
+        name: Multiplatform build
+
+        runs-on: ubuntu-latest
+
+        if: github.ref != 'refs/heads/master'
+
+        services:
+            registry:
+                image: registry:2
+                ports:
+                    - 5000:5000
+
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   name: Set up QEMU
+                uses: docker/setup-qemu-action@v2
+
+            -   name: Set up Docker Buildx
+                id: buildx
+                uses: docker/setup-buildx-action@v2
+                with:
+                    driver-opts: |
+                        network=host
+
+            -   name: Build
+                run: make
+
     build_and_deploy:
         name: Build and deploy
 
         runs-on: ubuntu-latest
+
+        if: github.ref == 'refs/heads/master'
 
         steps:
             -   name: Checkout
@@ -32,12 +68,7 @@ jobs:
                 id: buildx
                 uses: docker/setup-buildx-action@v2
 
-            -   name: Build and test
-                if: github.ref != 'refs/heads/master'
-                run: make
-
-            -   name: Deploy
-                if: github.ref == 'refs/heads/master'
+            -   name: Build and deploy
                 run: |
                     echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
                     make DEPLOY=1 deploy

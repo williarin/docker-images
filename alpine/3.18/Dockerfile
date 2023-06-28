@@ -1,7 +1,6 @@
-FROM alpine:edge
+FROM alpine:3.18
 
 RUN set -eux; \
-    echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories; \
     apk update; \
     apk add icu-data-full exa tzdata git zsh-vcs zsh zsh-autosuggestions zsh-syntax-highlighting; \
     cat "/usr/share/zoneinfo/UTC" > /etc/localtime
