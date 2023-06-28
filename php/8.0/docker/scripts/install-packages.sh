@@ -3,7 +3,11 @@ set -ex
 
 apk --no-cache add \
     bash \
-    zip unzip \
+    zip unzip;
+
+apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/main add 'icu-libs==71.1-r2';
+
+apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/community add \
     php8 \
     php8-ctype \
     php8-curl \
@@ -34,5 +38,3 @@ apk --no-cache add \
     php8-fileinfo \
     php8-sodium \
     php8-opcache
-
-ln -s /usr/bin/php8 /usr/bin/php
