@@ -86,10 +86,10 @@ Additionally, `-dev` versions come with Xdebug 3, Git and Make.
 | williarin/php:8.0-dev      | [![](https://img.shields.io/docker/image-size/williarin/php/8.0-dev)](https://hub.docker.com/r/williarin/php)     |
 | williarin/php:8.0-fpm      | [![](https://img.shields.io/docker/image-size/williarin/php/8.0-fpm)](https://hub.docker.com/r/williarin/php)     |
 | williarin/php:8.0-fpm-dev  | [![](https://img.shields.io/docker/image-size/williarin/php/8.0-fpm-dev)](https://hub.docker.com/r/williarin/php) |
-| williarin/php:7.4          | [![](https://img.shields.io/docker/image-size/williarin/php/7.4)](https://hub.docker.com/r/williarin/php)         |
-| williarin/php:7.4-dev      | [![](https://img.shields.io/docker/image-size/williarin/php/7.4-dev)](https://hub.docker.com/r/williarin/php)     |
-| williarin/php:7.4-fpm      | [![](https://img.shields.io/docker/image-size/williarin/php/7.4-fpm)](https://hub.docker.com/r/williarin/php)     |
-| williarin/php:7.4-fpm-dev  | [![](https://img.shields.io/docker/image-size/williarin/php/7.4-fpm-dev)](https://hub.docker.com/r/williarin/php) |
+| williarin/php:7.4 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/php/7.4)](https://hub.docker.com/r/williarin/php)         |
+| williarin/php:7.4-dev [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/php/7.4-dev)](https://hub.docker.com/r/williarin/php)     |
+| williarin/php:7.4-fpm [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/php/7.4-fpm)](https://hub.docker.com/r/williarin/php)     |
+| williarin/php:7.4-fpm-dev [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/php/7.4-fpm-dev)](https://hub.docker.com/r/williarin/php) |
 
 ### Docker Security
 

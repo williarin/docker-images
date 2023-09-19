@@ -74,7 +74,7 @@ test-alpineedge:
 	docker run --rm $(REGISTRY)williarin/alpine:edge /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux edge'"
 
 .PHONY: php php7 php8 php81 php82 php83
-php: php7 php8 php81 php82 php83
+php: php8 php81 php82 php83
 
 php7:
 	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php -t $(REGISTRY)williarin/php:7.4 php/7.4
@@ -107,7 +107,7 @@ php83:
 	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.3-fpm-dev php/8.3
 
 .PHONY: test-php test-php7 test-php8 test-php81 test-php82 test-php83
-test-php: test-php7 test-php8 test-php81 test-php82 test-php83
+test-php: test-php8 test-php81 test-php82 test-php83
 
 test-php7:
 	docker run $(DOCKER_RUN_TEST_OPTIONS) $(REGISTRY)williarin/php:7.4 bash -c "php -v | grep '7\.4'"
