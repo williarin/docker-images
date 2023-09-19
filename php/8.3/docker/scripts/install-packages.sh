@@ -4,8 +4,9 @@ set -ex
 apk --no-cache add \
     bash \
     zip unzip \
-    libavif \
     icu-libs;
+
+apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main add libavif
 
 apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing add \
     php83 \
