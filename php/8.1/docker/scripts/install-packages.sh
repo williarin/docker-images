@@ -1,7 +1,10 @@
 #!/bin/sh
 set -ex
 
-apk --no-cache add \
+apk --no-cache \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.18/community \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.18/main \
+    add \
     bash \
     zip unzip \
     icu-libs \

@@ -25,8 +25,8 @@ all: alpine test-alpine php test-php
 .PHONY: deploy
 deploy: alpine php
 
-.PHONY: alpine alpine313 alpine314 alpine315 alpine316 alpine318 alpineedge
-alpine: alpine318 alpineedge
+.PHONY: alpine alpine313 alpine314 alpine315 alpine316 alpine318 alpine319 alpineedge
+alpine: alpine318 alpine319 alpineedge
 
 alpine313:
 	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.13 alpine/3.13
@@ -41,7 +41,10 @@ alpine316:
 	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.16 alpine/3.16
 
 alpine318:
-	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.18 -t $(REGISTRY)williarin/alpine:latest alpine/3.18
+	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.18 alpine/3.18
+
+alpine319:
+	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.19 -t $(REGISTRY)williarin/alpine:latest alpine/3.19
 
 alpineedge:
 	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:edge alpine/edge
@@ -68,6 +71,10 @@ test-alpine316:
 test-alpine318:
 	docker run --rm $(REGISTRY)williarin/alpine:3.18 /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
 	docker run --rm $(REGISTRY)williarin/alpine:3.18 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux v3.18'"
+
+test-alpine319:
+	docker run --rm $(REGISTRY)williarin/alpine:3.19 /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
+	docker run --rm $(REGISTRY)williarin/alpine:3.19 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux v3.19'"
 
 test-alpineedge:
 	docker run --rm $(REGISTRY)williarin/alpine:edge /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"

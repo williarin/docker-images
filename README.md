@@ -42,13 +42,14 @@ docker run --rm -it -u '1000:1000' williarin/alpine
 | ------ | ---- |
 | williarin/alpine:edge   | [![](https://img.shields.io/docker/image-size/williarin/alpine/edge)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:latest | [![](https://img.shields.io/docker/image-size/williarin/alpine/latest)](https://hub.docker.com/r/williarin/alpine) |
+| williarin/alpine:3.19   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.19)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.18   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.18)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.16 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.16)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.15 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.15)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.14 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.14)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.13 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.13)](https://hub.docker.com/r/williarin/alpine)   |
 
-_**Note:** `latest` is equivalent to `3.18`_
+_**Note:** `latest` is equivalent to `3.19`_
 
 ## PHP 7.4, 8.0, 8.1, 8.2, 8.3 images
 
@@ -56,7 +57,7 @@ Images are built once a week at 00:00 on Monday.
 
 ### Details
 
-All PHP images are based on Alpine Linux 3.18 ([williarin/alpine](#alpine-linux-with-zsh)). They come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
+All PHP images are based on Alpine Linux 3.19 ([williarin/alpine](#alpine-linux-with-zsh)). They come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
 
 Installed PHP extensions:
 
