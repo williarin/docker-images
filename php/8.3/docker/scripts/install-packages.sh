@@ -7,7 +7,10 @@ apk --no-cache add \
 
 apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main add libavif icu-libs libsodium
 
-apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community add \
+apk --no-cache \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
+    add \
     php83 \
     php83-ctype \
     php83-curl \
@@ -39,4 +42,5 @@ apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
     php83-sodium \
     php83-opcache
 
+rm -f /usr/bin/php
 ln -s /usr/bin/php83 /usr/bin/php

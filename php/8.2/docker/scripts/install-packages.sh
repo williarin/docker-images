@@ -1,7 +1,10 @@
 #!/bin/sh
 set -ex
 
-apk --no-cache add \
+apk --no-cache \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/community \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/main \
+    add \
     bash \
     zip unzip \
     icu-libs \
@@ -36,5 +39,3 @@ apk --no-cache add \
     php82-fileinfo \
     php82-sodium \
     php82-opcache
-
-ln -s /usr/bin/php82 /usr/bin/php

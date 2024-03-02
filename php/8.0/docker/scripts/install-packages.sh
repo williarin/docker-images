@@ -7,7 +7,10 @@ apk --no-cache add \
 
 apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/main add 'icu-libs==71.1-r2';
 
-apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/community add \
+apk --no-cache \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/community \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/main \
+    add \
     php8 \
     php8-ctype \
     php8-curl \
