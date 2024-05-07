@@ -83,34 +83,34 @@ test-alpineedge:
 php: php8 php81 php82 php83
 
 php7:
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php -t $(REGISTRY)williarin/php:7.4 php/7.4
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php-dev -t $(REGISTRY)williarin/php:7.4-dev php/7.4
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php-fpm -t $(REGISTRY)williarin/php:7.4-fpm php/7.4
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php-fpm-dev -t $(REGISTRY)williarin/php:7.4-fpm-dev php/7.4
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php -t $(REGISTRY)williarin/php:7.4 php/7.4
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php-dev -t $(REGISTRY)williarin/php:7.4-dev php/7.4
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php-fpm -t $(REGISTRY)williarin/php:7.4-fpm php/7.4
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=7.4 --target php-fpm-dev -t $(REGISTRY)williarin/php:7.4-fpm-dev php/7.4
 
 php8:
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php -t $(REGISTRY)williarin/php:8.0 php/8.0
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php-dev -t $(REGISTRY)williarin/php:8.0-dev php/8.0
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php-fpm -t $(REGISTRY)williarin/php:8.0-fpm php/8.0
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.0-fpm-dev php/8.0
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php -t $(REGISTRY)williarin/php:8.0 php/8.0
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php-dev -t $(REGISTRY)williarin/php:8.0-dev php/8.0
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php-fpm -t $(REGISTRY)williarin/php:8.0-fpm php/8.0
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.0 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.0-fpm-dev php/8.0
 
 php81:
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php -t $(REGISTRY)williarin/php:8.1 php/8.1
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php-dev -t $(REGISTRY)williarin/php:8.1-dev php/8.1
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php-fpm -t $(REGISTRY)williarin/php:8.1-fpm php/8.1
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.1-fpm-dev php/8.1
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php -t $(REGISTRY)williarin/php:8.1 php/8.1
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php-dev -t $(REGISTRY)williarin/php:8.1-dev php/8.1
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php-fpm -t $(REGISTRY)williarin/php:8.1-fpm php/8.1
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.1 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.1-fpm-dev php/8.1
 
 php82:
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php -t $(REGISTRY)williarin/php:8.2 php/8.2
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php-dev -t $(REGISTRY)williarin/php:8.2-dev php/8.2
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php-fpm -t $(REGISTRY)williarin/php:8.2-fpm php/8.2
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.2-fpm-dev php/8.2
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php -t $(REGISTRY)williarin/php:8.2 php/8.2
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php-dev -t $(REGISTRY)williarin/php:8.2-dev php/8.2
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php-fpm -t $(REGISTRY)williarin/php:8.2-fpm php/8.2
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.2 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.2-fpm-dev php/8.2
 
 php83:
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php -t $(REGISTRY)williarin/php:8.3 php/8.3
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php-dev -t $(REGISTRY)williarin/php:8.3-dev php/8.3
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php-fpm -t $(REGISTRY)williarin/php:8.3-fpm php/8.3
-	docker $(BUILDX) build $(PUSH) $(PLATFORM) --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.3-fpm-dev php/8.3
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php -t $(REGISTRY)williarin/php:8.3 php/8.3
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php-dev -t $(REGISTRY)williarin/php:8.3-dev php/8.3
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php-fpm -t $(REGISTRY)williarin/php:8.3-fpm php/8.3
+	docker $(BUILDX) build $(PUSH) $(PLATFORM) --no-cache --build-arg REGISTRY=$(REGISTRY) --build-arg ALPINE_VERSION=latest --build-arg PHP_VERSION=8.3 --target php-fpm-dev -t $(REGISTRY)williarin/php:8.3-fpm-dev php/8.3
 
 .PHONY: test-php test-php7 test-php8 test-php81 test-php82 test-php83
 test-php: test-php8 test-php81 test-php82 test-php83
