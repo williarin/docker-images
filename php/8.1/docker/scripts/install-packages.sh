@@ -39,3 +39,6 @@ apk --no-cache \
     php81-fileinfo \
     php81-sodium \
     php81-opcache
+
+rm -f /usr/bin/php
+ln -s /usr/bin/php81 /usr/bin/php

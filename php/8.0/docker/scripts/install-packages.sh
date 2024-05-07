@@ -41,3 +41,6 @@ apk --no-cache \
     php8-fileinfo \
     php8-sodium \
     php8-opcache
+
+rm -f /usr/bin/php
+ln -s /usr/bin/php8 /usr/bin/php

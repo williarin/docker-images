@@ -1,6 +1,5 @@
 LOCAL ?= 0
 DEPLOY ?= 0
-PUSH =
 BUILDX = buildx
 PLATFORM = --platform=linux/amd64,linux/arm64,linux/arm/v7
 REGISTRY = localhost:5000/
