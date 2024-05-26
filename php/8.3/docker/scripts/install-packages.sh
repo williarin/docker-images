@@ -4,13 +4,10 @@ set -ex
 apk --no-cache add \
     bash \
     zip unzip \
-
-apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main add libavif icu-libs libsodium
-
-apk --no-cache \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
-    add \
+    curl \
+    libavif \
+    icu-libs \
+    libsodium \
     php83 \
     php83-ctype \
     php83-curl \

@@ -39,7 +39,7 @@ RUN /docker/scripts/install-dev-packages.sh \
 
 FROM base AS base-fpm
 
-RUN apk --no-cache add php81-fpm \
+RUN apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/community add php81-fpm \
     && mv /docker/www.conf /etc/php81/php-fpm.d/www.conf
 
 EXPOSE 9000
