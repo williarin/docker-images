@@ -2,16 +2,17 @@
 
 This repository contains various Docker images to be used in web softwares.
 
-## Alpine Linux with zsh
+## Alpine Linux for prod and dev
 
-Beautiful terminal for your Docker containers.
+Starting from 3.20, the production image is almost the same as the official alpine. The timezone is set to UTC.
+
+Versions 3.19 (and below) and 3.20-dev include tools to enhance manual interaction inside the container.
 
 ![GitHub Logo](/assets/images/exa_demo.jpg)
 
 ### Details
 
-Although slightly bigger than the base Alpine image,
-it will be a joy to connect to your containers as it includes:
+Tools included in the dev version (3.19 and below, 3.20-dev and above):
 
 * [zsh](https://www.zsh.org/) with `zsh-autosuggestions` and `zsh-syntax-highlighting` plugins
 * [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) with a beautiful prompt
@@ -30,10 +31,10 @@ Try it:
 
 ```bash
 # Connect as root
-docker run --rm -it williarin/alpine
+docker run --rm -it williarin/alpine:dev
 
 # Connect as current user
-docker run --rm -it -u '1000:1000' williarin/alpine
+docker run --rm -it -u '1000:1000' williarin/alpine:dev
 ```
 
 ### Available tags
@@ -42,14 +43,17 @@ docker run --rm -it -u '1000:1000' williarin/alpine
 | ------ | ---- |
 | williarin/alpine:edge   | [![](https://img.shields.io/docker/image-size/williarin/alpine/edge)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:latest | [![](https://img.shields.io/docker/image-size/williarin/alpine/latest)](https://hub.docker.com/r/williarin/alpine) |
+| williarin/alpine:dev | [![](https://img.shields.io/docker/image-size/williarin/alpine/dev)](https://hub.docker.com/r/williarin/alpine) |
+| williarin/alpine:3.20   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.20)](https://hub.docker.com/r/williarin/alpine)   |
+| williarin/alpine:3.20-dev   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.20-dev)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.19   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.19)](https://hub.docker.com/r/williarin/alpine)   |
-| williarin/alpine:3.18   | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.18)](https://hub.docker.com/r/williarin/alpine)   |
+| williarin/alpine:3.18 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.18)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.16 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.16)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.15 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.15)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.14 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.14)](https://hub.docker.com/r/williarin/alpine)   |
 | williarin/alpine:3.13 [deprecated] | [![](https://img.shields.io/docker/image-size/williarin/alpine/3.13)](https://hub.docker.com/r/williarin/alpine)   |
 
-_**Note:** `latest` is equivalent to `3.19`_
+_**Note:** `latest` is equivalent to `3.20` and `dev` is equivalent to `3.20-dev`_
 
 ## PHP 7.4, 8.0, 8.1, 8.2, 8.3 images
 
@@ -57,7 +61,7 @@ Images are built once a week at 00:00 on Monday.
 
 ### Details
 
-All PHP images are based on Alpine Linux 3.19 ([williarin/alpine](#alpine-linux-with-zsh)). They come with `bash`, `zsh`, `zip`, `unzip` and widely used PHP extensions.
+All PHP images are based on Alpine Linux 3.20 ([williarin/alpine](#alpine-linux-for-prod-and-dev)). They come with `bash`, `curl`, `zip`, `unzip` and widely used PHP extensions.
 
 Installed PHP extensions:
 
