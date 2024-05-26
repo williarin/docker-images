@@ -2,11 +2,12 @@
 set -ex
 
 apk --no-cache \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.18/community \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.18/main \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/community \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/main \
     add \
     bash \
     zip unzip \
+    curl \
     icu-libs \
     libavif \
     php81 \

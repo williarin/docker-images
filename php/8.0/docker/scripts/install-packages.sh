@@ -3,6 +3,7 @@ set -ex
 
 apk --no-cache add \
     bash \
+    curl \
     zip unzip;
 
 apk --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/main add 'icu-libs==71.1-r2';

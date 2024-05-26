@@ -1,14 +1,13 @@
 #!/bin/sh
 set -ex
 
-apk --no-cache \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/community \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/main \
-    add \
+apk --no-cache add \
     bash \
     zip unzip \
-    icu-libs \
+    curl \
     libavif \
+    icu-libs \
+    libsodium \
     php82 \
     php82-ctype \
     php82-curl \
@@ -39,3 +38,6 @@ apk --no-cache \
     php82-fileinfo \
     php82-sodium \
     php82-opcache
+
+rm -f /usr/bin/php
+ln -s /usr/bin/php82 /usr/bin/php
