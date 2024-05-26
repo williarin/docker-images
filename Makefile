@@ -24,8 +24,8 @@ all: alpine test-alpine php test-php
 .PHONY: deploy
 deploy: alpine php
 
-.PHONY: alpine alpine313 alpine314 alpine315 alpine316 alpine318 alpine319 alpineedge
-alpine: alpine318 alpine319 alpineedge
+.PHONY: alpine alpine313 alpine314 alpine315 alpine316 alpine318 alpine319 alpine320 alpineedge
+alpine: alpine319 alpine320 alpineedge
 
 alpine313:
 	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.13 alpine/3.13
@@ -43,13 +43,17 @@ alpine318:
 	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.18 alpine/3.18
 
 alpine319:
-	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.19 -t $(REGISTRY)williarin/alpine:latest alpine/3.19
+	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.19 alpine/3.19
+
+alpine320:
+	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.20 -t $(REGISTRY)williarin/alpine:latest alpine/3.20 --target prod
+	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:3.20-dev -t $(REGISTRY)williarin/alpine:dev alpine/3.20 --target dev
 
 alpineedge:
 	docker $(BUILDX) build $(PUSH) --no-cache $(PLATFORM) -t $(REGISTRY)williarin/alpine:edge alpine/edge
 
 .PHONY: test-alpine test-alpine313 test-alpine314 test-alpine315 test-alpine316 test-alpine318 test-alpineedge
-test-alpine: test-alpine318 test-alpineedge
+test-alpine: test-alpine319 test-alpine320 test-alpineedge
 
 test-alpine313:
 	docker run --rm $(REGISTRY)williarin/alpine:3.13 /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
@@ -74,6 +78,11 @@ test-alpine318:
 test-alpine319:
 	docker run --rm $(REGISTRY)williarin/alpine:3.19 /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
 	docker run --rm $(REGISTRY)williarin/alpine:3.19 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux v3.19'"
+
+test-alpine320:
+	docker run --rm $(REGISTRY)williarin/alpine:3.20 /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux v3.20'"
+	docker run --rm $(REGISTRY)williarin/alpine:3.20-dev /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
+	docker run --rm $(REGISTRY)williarin/alpine:3.20-dev /bin/sh -c "cat /etc/os-release | grep -e 'Alpine Linux v3.20'"
 
 test-alpineedge:
 	docker run --rm $(REGISTRY)williarin/alpine:edge /bin/sh -c "zsh --version | grep -e '^zsh [0-9]\.[0-9]'"
